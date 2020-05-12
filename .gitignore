@@ -1,3 +1,9 @@
+practice.ipynb
+chromedriver.exe
+
+selenium
+splinter
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
