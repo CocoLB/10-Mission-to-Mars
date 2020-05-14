@@ -7,7 +7,8 @@ import datetime as dt
 
 def scrape_all():
    # Initiate headless driver for deployment
-   browser = Browser("chrome", executable_path="chromedriver", headless=True)
+   browser = Browser("chrome", executable_path="chromedriver.exe", headless=True)
+
    # set news title and paragraph variables
    news_title, news_paragraph = mars_news(browser)
    # Run all scraping functions and store results in dictionary
@@ -18,12 +19,12 @@ def scrape_all():
        "facts": mars_facts(),
        "last_modified": dt.datetime.now()
        }
-    browser.quit()
-    return data   
+   browser.quit()
+   return data   
 
 # Set the executable path and initialize the chrome browser in splinter
-executable_path = {'executable_path': 'chromedriver'}
-browser = Browser('chrome', **executable_path)
+#executable_path = {'executable_path': 'chromedriver'}
+#browser = Browser('chrome', **executable_path)
 
 
 ### Article
@@ -96,20 +97,20 @@ def featured_image(browser):
 
 def mars_facts():        
     try:
-        # use pandas 'read_html" to scrape the facts table into a dataframe
+    #use pandas 'read_html" to scrape the facts table into a dataframe
         df = pd.read_html('http://space-facts.com/mars/')[0]
     except BaseException:
         return None
     
     #Assign columns and set index of dataframe 
-    df.columns=['description', 'Mars', 'Earth']
-    df.set_index('description', inplace=True)
+    df.columns=['Description', 'Value']
+    df.set_index('Description', inplace=True)
     
     # Convert dataframe into HTML format, add bootstrap
-    df.to_html()
+    return df.to_html()
 
 
-browser.quit()
+#browser.quit()
 
 if __name__ == "__main__":
     # If running as script, print scraped data
