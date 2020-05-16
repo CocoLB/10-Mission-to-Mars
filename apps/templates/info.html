@@ -5,22 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission to Mars</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron text-center">
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="mainNav">
+        <div class="container-fluid" style="background-color:rgb(63, 46, 39)">
+            <div class="navbar-header" style="background-color:rgb(63, 46, 39)">
+                <a class="navbar-brand">Mission to Mars</a>
+            </div>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mars-news">Mars News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mars-featured-image">Mars Featured Image</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mars-facts">Mars Facts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mars-4-hemispheres">Mars Hemispheres</a>
+                    </li>
+                </ul>
+            
+        </div>
+    </nav>
+
+    <div class="container" style="background-color:rgb(252, 234, 201)">
+        <div class="jumbotron text-center" style="background-color:rgb(253, 203, 183)">
             <h1>Mission to Mars</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape"
+            <p><a class="btn btn-warning btn-lg" href="/scrape"
                 role="button">Scrape New Data</a></p>
         </div>
         <!-- Mars News -->
-        <div class="row" id="mars-news">
+        <div class="row" id="mars-news" >
             <div class="col-md-12">
                 <div class="media">
                     <div class="media-body">
-                        <h2>Latest Mars News</h2>
-                        <h4 class="media-heading">{{mars.news_title}}</h4>   
-                        <p>{{ mars.news_paragraph }}</p>                  
+                        <div>
+                           <h2  style="background-color:rgb(253, 203, 183)">Latest Mars News</h2>
+                        </div>
+                        <div style="background-color:rgb(247, 205, 157)">
+                           <h4 class="media-heading">{{mars.news_title}}</h4>   
+                           <p>{{ mars.news_paragraph }}</p> 
+                        </div>                 
                     </div>
                 </div>        
             </div>
@@ -28,20 +60,45 @@
 
         <!-- Featured Image --> 
         <div class="row" id="mars-featured-image">
-            <div class="col-md-8">         
-              <h2>Featured Mars Image</h2>         
+            <div class="col-md-8" >                     
+                 <h2 style="background-color:rgb(253, 203, 183)">Featured Mars Image</h2>                      
               <img src="{{ mars.featured_image }}" class="img-responsive" alt="Responsive image">          
             </div> 
             <!-- Mars Facts -->
             <div class="col-md-4">
-                <div class="row" id="mars-facts">
-                    <div class="col-md-12">
-                      <h4>Mars Facts</h4>
+                <div class="row" id="mars-facts" >
+                    <div class="col-md-12" >                       
+                         <h2 style="background-color:rgb(253, 203, 183)">Mars Facts</h2>                        
+                      <div style="background-color:rgb(247, 205, 157)">
                       {{ mars.facts | safe }}
+                    </div>
                     </div>
                 </div>
             </div>        
-          </div>
+        </div>
+
+        <!--CHALLENGE 4 MARS HEMISPHERES-->
+        <div class="row" id="mars-4-hemispheres">
+            <div style="background-color:rgb(253, 203, 183)">
+               <h2>Mars 4 Hemispheres</h2>  
+            </div>
+            <div class="col-md-3" style="background-color:rgb(253, 228, 183)">
+                <h5>{{mars.hem_0_title}}</h5>
+                <img src="{{ mars.hem_0_url }}" class="img-responsive" alt="Responsive image"> 
+             </div>  
+            <div class="col-md-3" style="background-color:rgb(253, 228, 183)">
+                <h5>{{mars.hem_1_title}}</h5>
+                <img src="{{ mars.hem_1_url }}" class="img-responsive" alt="Responsive image"> 
+            </div>
+            <div class="col-md-3" style="background-color:rgb(253, 228, 183)">
+                <h5>{{mars.hem_2_title}}</h5>
+                <img src="{{ mars.hem_2_url }}" class="img-responsive" alt="Responsive image"> 
+             </div>  
+            <div class="col-md-3" style="background-color:rgb(253, 228, 183)">
+                <h5>{{mars.hem_3_title}}</h5>
+                <img src="{{ mars.hem_3_url }}" class="img-responsive" alt="Responsive image"> 
+             </div>   
+        </div>
     </div>  
 </body>
 </html>
