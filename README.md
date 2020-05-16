@@ -10,9 +10,23 @@ We've been tasked to put together a web-scraping project about Nasa's Mission to
 - https://mars.nasa.gov/news - https://space-facts.com/mars/ - https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
 
 ## Challenge Summary
-Using Splinter and Beautoful Soup, we scraped the 4 hemispheres pictures and names, and uploaded them to our MangoDB to be displayed on our webpage, using Bootstrap.
+Using Splinter and Beautiful Soup, we are scraping:
+- the latest news title and article summary from the NASA website
+- the latest picture from the NASA picture website
+- the facts table for Mars and Earth from the space facts website
+- the pictures and names of the 4 Mars hemispheres
 
-<img src="portfolio sc/tobs_june.png" width="100">
+and uploading them all to our MangoDB to be displayed on our webpage, using Bootstrap.
+
+<img src="MtoMscr.png" width="300">
+
+We also started to work on our Portfolio, using one of the provided templates. Work in progress.
+
+<img src="scr1.png" width="300"> <img src="scr2.png" width="300">
+
+
+
+
 
 
 
